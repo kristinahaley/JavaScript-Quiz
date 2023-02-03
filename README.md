@@ -19,3 +19,5 @@ THEN I can save my initials and score
 https://kristinahaley.github.io/JavaScript-Quiz/
 
 https://github.com/kristinahaley/JavaScript-Quiz
+
+![alt text](assets/screenshot.png)
