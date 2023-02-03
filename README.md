@@ -17,3 +17,5 @@ WHEN the game is over
 THEN I can save my initials and score
 
 https://kristinahaley.github.io/JavaScript-Quiz/
+
+https://github.com/kristinahaley/JavaScript-Quiz
