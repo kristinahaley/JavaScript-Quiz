@@ -1,4 +1,4 @@
-var questions = [
+let questions = [
   {
   numb: 1,
   question: "Javascript is an _______ language?",
@@ -83,13 +83,13 @@ continue_btn.onclick = ()=>{
     startTimer(60); //calling startTimer function
     startTimerLine(0); //calling startTimerLine function
 }
-var timeValue =  60;
-var que_count = 0;
-var que_numb = 1;
-var userScore = 0;
-var counter;
-var counterLine;
-var widthValue = 0;
+let timeValue =  60;
+let que_count = 0;
+let que_numb = 1;
+let userScore = 0;
+let counter;
+let counterLine;
+let widthValue = 0;
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 // if restartQuiz button clicked
@@ -123,15 +123,11 @@ next_btn.onclick = ()=>{
         que_numb++; //increment the que_numb value
         showQuetions(que_count); //calling showQestions function
         queCounter(que_numb); //passing que_numb value to queCounter
-        clearInterval(counter); //clear counter
-        clearInterval(counterLine); //clear counterLine
-        startTimer(timeValue); //calling startTimer function
         startTimerLine(widthValue); //calling startTimerLine function
         timeText.textContent = "Time Left"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
     }else{
-        clearInterval(counter); //clear counter
-        clearInterval(counterLine); //clear counterLine
+      
         showResult(); //calling showResult function
     }
 }
@@ -146,7 +142,7 @@ function showQuetions(index){
     + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>';
     que_text.innerHTML = que_tag; //adding new span tag inside que_tag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
-    
+
     const option = option_list.querySelectorAll(".option");
     // set onclick attribute to all available options
     for(i=0; i < option.length; i++){
@@ -158,8 +154,7 @@ var tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 var crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 //if user clicked on option
 function optionSelected(answer){
-    clearInterval(counter); //clear counter
-    clearInterval(counterLine); //clear counterLine
+ 
     var userAns = answer.textContent; //getting user selected option
     var correcAns = questions[que_count].answer; //getting correct answer from array
     const allOptions = option_list.children.length; //getting all option items
@@ -235,7 +230,7 @@ function startTimer(time){
     }
 }
 function startTimerLine(time){
-    counterLine = setInterval(timer, 29);
+    counterLine = setInterval(timer, 30);
     function timer(){
         time += 1; //upgrading time value with 1
         time_line.style.width = time + "px"; //increasing width of time_line with px by time value
